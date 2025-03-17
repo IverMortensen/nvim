@@ -74,6 +74,7 @@ vim.opt.confirm = true
 -- Start terminal in input mode
 vim.cmd([[autocmd TermOpen * startinsert]])
 
+-- [[ Keymaps keybinds ]]
 -- Open new terminal tab
 vim.keymap.set("n", "<leader>tt", "<cmd>tab terminal<CR>")
 
@@ -88,6 +89,9 @@ vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagn
 
 -- Exit terminal mode
 vim.keymap.set("t", "<Esc><Esc>", "<C-\\><C-n>", { desc = "Exit terminal mode" })
+
+-- Toggle git blame
+vim.keymap.set("n", "<leader>gb", "<cmd>Gitsigns toggle_current_line_blame<CR>", { desc = "Toggle git blame" })
 
 -- Disable arrow keys in normal mode
 vim.keymap.set("n", "<left>", '<cmd>echo "Use h to move!!"<CR>')
