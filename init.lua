@@ -14,7 +14,7 @@ vim.g.have_nerd_font = true
 -- Make line numbers default
 vim.opt.number = true
 -- Relative line numbers for easier jumping
-vim.opt.relativenumber = false
+vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
 vim.opt.mouse = "a"
@@ -57,7 +57,7 @@ vim.opt.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 vim.opt.list = true
-vim.opt.listchars = { tab = "» ", trail = "·", nbsp = "␣" }
+vim.opt.listchars = { tab = "  ", trail = "·", nbsp = "␣" }
 
 -- Preview substitutions live, as you type!
 vim.opt.inccommand = "split"
@@ -76,6 +76,9 @@ vim.cmd([[autocmd TermOpen * startinsert]])
 
 -- Open new terminal tab
 vim.keymap.set("n", "<leader>tt", "<cmd>tab terminal<CR>")
+
+-- Close window (:q)
+vim.keymap.set("n", "<leader>-", "<cmd>q<CR>")
 
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
